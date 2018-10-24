@@ -42,6 +42,7 @@ public class MockTest {
             RequestBuilder builder = get("/mock/get").param("param", "wutao+啊啊啊啊").accept(MediaType.APPLICATION_JSON_UTF8);
             String response = mvc.perform(builder).andReturn().getResponse().getContentAsString();
             log.info(response);
+            log.info("test");
         } catch (Exception e) {
             log.error("测试发送请求异常");
         }
