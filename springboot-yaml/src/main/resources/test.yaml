@@ -1,0 +1,4 @@
+com:
+  dlh:
+    project: cool.web
+    packages: cool.test
