@@ -1,5 +1,6 @@
 package com.dlh.yaml.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "yaml")
+@Slf4j
 public class TestController {
 
     @Value("${com.dlh.name}")
@@ -26,6 +28,7 @@ public class TestController {
     @RequestMapping(value = "test")
     public String test(){
         System.err.println(name +": " + dept);
+        log.info("test");
         return "test";
     }
 
