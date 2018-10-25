@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+#      uri: mongodb://root:root@localhost:27017/admin
+#      需连接的库,不同于uri中的认证库
+#      database: test
+      username: root
+      password: root
+      authentication-database: admin
+      host: 192.168.2.56
+      port: 27017
+#      uri: mongodb://bewinner:bewinner123@192.168.2.215:20000/admin
+
+
