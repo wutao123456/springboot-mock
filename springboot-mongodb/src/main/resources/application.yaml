@@ -2,8 +2,8 @@ spring:
   data:
     mongodb:
 #      uri: mongodb://root:root@localhost:27017/admin
-#      需连接的库,不同于uri中的认证库
-#      database: test
+#      需连接的库(默认test库),不同于uri中的认证库
+      database: wutao
       username: root
       password: root
       authentication-database: admin
