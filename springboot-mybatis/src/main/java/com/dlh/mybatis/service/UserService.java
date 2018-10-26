@@ -1,4 +1,4 @@
-package com.dlh.mybatis;
+package com.dlh.mybatis.service;
 
 import com.dlh.mybatis.dao.UserMapper;
 import com.dlh.mybatis.entity.User;
