@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FanoutConsumer {
 
-    @RabbitListener(queues = {"fanout.A","fanout.B","fanout.C","fanout.queue"})
+    @RabbitListener(queues = {"fanout.A","fanout.B","fanout.C"})
     @RabbitHandler
     public void receiveFanout(String msg){
         System.err.println("我负责监听FANOUT");

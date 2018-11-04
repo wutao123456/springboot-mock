@@ -16,7 +16,10 @@ public class RabbitmqConfig {
         return new Queue("hello");
     }
 
-
+    @Bean
+    public Queue queue1(){
+        return new Queue("wutao_queue");
+    }
 
 
 }
