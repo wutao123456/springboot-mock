@@ -1,4 +1,4 @@
-package com.dlh.springbootamqp.rabbit;
+package com.dlh.springbootamqp.hello;
 
 import com.dlh.springbootamqp.entity.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -10,16 +10,19 @@ import org.springframework.stereotype.Component;
  * @date 2018/11/2
  */
 @Component
-@RabbitListener(queues = "hello")
 public class Consumer {
 
+    @RabbitListener(queues = "hello")
     @RabbitHandler
     public void receive(String message){
         System.out.println("收到消息"+message);
     }
 
+    @RabbitListener(queues = "wutao_queue")
     @RabbitHandler
     public void receive(User user){
         System.err.println("Receiver object: "+user.toString());
     }
+
+
 }
