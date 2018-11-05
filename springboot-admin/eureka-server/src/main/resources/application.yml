@@ -1,0 +1,30 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 30
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+      # 关闭自我保护机制
+      #eureka.server.enable-self-preservation=false
+      #心跳时间间隔
+      #eureka.instance.lease-renewal-interval-in-seconds=5
+      #剔除失效服务间隔
+      #eureka.server.eviction-interval-timer-in-ms=6000
+  server:
+    enable-self-preservation: false
+    #清理失效服务间隔时间
+    eviction-interval-timer-in-ms: 3000
+
+
+    #实现高可用的思想是：单机的Eureka注册中心向其他的注册中心注册自己，这样就可以形成互相注册的注册中心
