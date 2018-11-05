@@ -1,4 +1,4 @@
-package com.dlh.springbootamqp.rabbit;
+package com.dlh.springbootamqp.hello;
 
 import com.dlh.springbootamqp.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -17,11 +17,14 @@ public class Producer {
 
     public void send(){
         String msg = "hello" + System.currentTimeMillis();
+        System.out.println("发送消息 "+msg);
         amqpTemplate.convertAndSend("hello",msg);
     }
 
     public void sendObj(User user){
         System.out.println("发送user "+user.toString());
-        amqpTemplate.convertAndSend("hello",user);
+        amqpTemplate.convertAndSend("wutao_queue",user);
     }
+
+
 }
