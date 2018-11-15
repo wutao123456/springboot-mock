@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoConsumerController {
 
 
-    @Reference(version = "${demo.service.version}",
+    @Reference
+            (mock = "com.dlh.springboot.dubbo.consumer.DemoServiceMock",
+            version = "${demo.service.version}",
             application = "${dubbo.application.id}")
     //url="dubbo:localhost:12345"直联
     private DemoService demoService;
