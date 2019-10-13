@@ -21,9 +21,12 @@ public class TestController {
 
     @RequestMapping(value = "test")
     public String test(){
-        asyncTaskService.test1("1");
-        asyncTaskService.test2("2");
-        asyncTaskService.test3("3");
+        for (int i = 1; i <= 10; i++) {
+            asyncTaskService.test1(String.valueOf(i));
+        }
+//        asyncTaskService.test1("1");
+//        asyncTaskService.test2("2");
+//        asyncTaskService.test3("3");
         return "test";
     }
 }

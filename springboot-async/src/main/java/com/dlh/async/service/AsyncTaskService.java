@@ -15,6 +15,12 @@ public class AsyncTaskService {
 
     @Async
     public void test1(String id){
+        log.info("开始执行 " + id);
+        try{
+            Thread.sleep(2000);
+        }catch (Exception e){
+
+        }
         log.info("look up "+ id);
     }
 
