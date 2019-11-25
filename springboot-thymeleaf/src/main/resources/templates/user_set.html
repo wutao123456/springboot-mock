@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd')}"/>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd HH:mm:ss.SSS')}"/>
+<hr/>
+<p th:text="${#strings.replace('www.baidu.cn','.','$')}"/>
+<p th:text="${#strings.toUpperCase('www.baidu.cn')}"/>
+<p th:text="${#strings.trim('www.baidu.cn')}"/>
+<hr/>
+<p th:text="${#sets.contains(names,'boot-0')}"/>
+<p th:text="${#sets.contains(names,'boot-9')}"/>
+<p th:text="${#sets.size(names)}"/>
+<hr/>
+<p th:text="${#sets.contains(ids,0)}"/>
+<p th:text="${ids[1]}"/>
+<p th:text="${names[1]}"/>
+</body>
+<!--@{}链接表达式-->
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+</html>

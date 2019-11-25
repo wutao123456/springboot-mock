@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <p th:text="'用户编号：' + ${member.uid}"/>
+    <p th:text="'用户姓名：' + ${member.name}"/>
+    <p th:text="'用户年龄：' + ${member.age}"/>
+    <p th:text="'用户工资：' + ${member.salary}"/>
+    <p th:text="'出生日期：' + ${member.birthday}"/>
+    <p th:text="'出生日期：' + ${#dates.format(member.birthday,'yyyy-MM-dd')}"/>
+</div>
+
+<hr/>
+<div th:object="${member}">
+    <p th:text="'用户编号：' + *{uid}"/>
+    <p th:text="'用户姓名：' + *{name}"/>
+    <p th:text="'用户年龄：' + *{age}"/>
+    <p th:text="'用户工资：' + *{salary}"/>
+    <p th:text="'出生日期：' + *{birthday}"/>
+    <p th:text="'出生日期：' + *{#dates.format(birthday,'yyyy-MM-dd')}"/>
+</div>
+<a th:href="@{/show}">访问controller方法</a>
+</body>
+</html>
