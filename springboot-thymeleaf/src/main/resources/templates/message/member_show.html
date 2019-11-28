@@ -23,6 +23,11 @@
     <p th:text="'出生日期：' + *{birthday}"/>
     <p th:text="'出生日期：' + *{#dates.format(birthday,'yyyy-MM-dd')}"/>
 </div>
+
+<div th:switch="${member.uid}">
+    <p th:case="12345678">admin</p>
+    <p th:case="0">none</p>
+</div>
 <a th:href="@{/show}">访问controller方法</a>
 </body>
 </html>

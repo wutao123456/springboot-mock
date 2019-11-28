@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+<div th:insert=":: copy"></div>
+
+<div th:replace=":: copy"></div>
+
+<div th:include=":: copy"></div>
+
+<div th:fragment="copy">
+    &copy; 2011 The Good Thymes Virtual Grocery
+</div>
+
+<div th:replace="commons/test ::frag (onevar='test1',twovar='test2')"></div>
+</body>
+</html>

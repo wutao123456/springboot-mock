@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户首页</title>
+    <!-- 被引用的模板片段应用了 commons.css 中的样式时，在引用的模块中必须导入进来-->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/commons.css}">
+    <!-- 这是本文件自己的样式文件-->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/userHome.css}">
+</head>
+<body>
+<!--引入公共的头部，使用 replace 替换自己的 header 标签-->
+<!--注意：模板名称会根据 springboot 对 Thymeleaf 的配置规则进行映射-->
+<!--默认情况下就是 templates 目录下的 html 文件-->
+<header th:replace="commons/commons :: commonHeader"></header>
+<article>
+    <!-- 引入公共的左侧菜单，使用 replace 替换自己的 div;传递参数 0 ，与定义时约定的参数要保持一致-->
+    <div th:replace="commons/commons :: commonMenu(0)">
+    </div>
+    <div class="content">
+        <h2 class="hint">用户首页</h2>
+    </div>
+</article>
+<!--引入公共的底部，这里使用 id 选择器，而不是片段名称-->
+<footer th:replace="commons/commons :: #commonFooter"></footer>
+</body>
+</html>

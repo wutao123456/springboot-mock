@@ -67,4 +67,9 @@ public class ThymeleafController {
                 "<span style='color:red'>www.baidu.cn</span>");
         return "show_inner";
     }
+
+    @RequestMapping(value = "/fragment", method = RequestMethod.GET)
+    public String fragment(){
+        return "fragments/fragment";
+    }
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>公共模板</title>
+    <!-- 公共模板中，这个样式文件可以不用引用，因为不会从浏览器直接访问公共模板，而是访问具体的模块-->
+    <!-- 注意：如果模板片段中应用了其中的样式，则谁引用了模板片段，谁就要导入此样式文件-->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/commons.css}">
+</head>
+<body>
+<!--定义公共的头部，commonHeader 为模板片段名称-->
+<header th:fragment="commonHeader">
+    <h2>护龙山庄</h2>
+</header>
+
+<article>
+    <!-- 定义公共的左侧菜单，commonMenu 表示片段名称，index 为传递进来的参数-->
+    <div class="articleLeft" th:fragment="commonMenu(index)">
+        <!-- 根据传递的参数 index 来设置当前活动的菜单样式；三元运算符，第三个参数缺省，当 ? 判断为 false 时返回 null-->
+        <div><a th:href="@{/user/home}" th:class="${index}==0?'activeMenu'">用户首页</a></div>
+        <div><a th:href="@{/tiger/home}" th:class="${index}==1?'activeMenu'">Tiger Home</a></div>
+        <!-- 同理如果还有其它更多的菜单时，可以依次往下传递参数-->
+    </div>
+    <div class="content">
+    </div>
+</article>
+
+<!--定义公共的底部，这里使用 id 选择器，当然也可以用片段名，如 th:fragment="commonFooter"-->
+<footer id="commonFooter">
+    Copyright © 1998 - 2018 YYServer. All Rights Reserved
+</footer>
+
+</body>
+</html>

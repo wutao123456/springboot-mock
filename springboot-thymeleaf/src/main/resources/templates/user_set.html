@@ -19,6 +19,25 @@
 <p th:text="${#sets.contains(ids,0)}"/>
 <p th:text="${ids[1]}"/>
 <p th:text="${names[1]}"/>
+
+
+<hr/>
+<div th:each="name,iterator:${names}">
+    <!--当前迭代对象的index(从0开始计算)-->
+    <!--th:attr 可以设置任何属性值，语法格式：th:attr="属性名=属性值,[属性名=属性值]"-->
+    <p th:text="${iterator.index}" th:attr="style='color:red'"/>
+    <!--当前迭代对象的index(从1开始计算)-->
+    <p th:text="${iterator.count}"/>
+    <!--被迭代对象的大小-->
+    <p th:text="${#strings.isEmpty(iterator.size)}"/>
+    <!--当前迭代对象-->
+    <p th:text="${iterator.current}"/>
+    <!--当前循环是否第一个-->
+    <p th:text="${iterator.first}"/>
+    <!--当前循环是否最后一个-->
+    <p th:text="${iterator.last}"/>
+    <p th:text="${name}"/>
+</div>
 </body>
 <!--@{}链接表达式-->
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
