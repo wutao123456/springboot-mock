@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--统一管理版本号,标签名自定义-->
-    <juit.version>3.8.1</juit.version>
+    <juit.version>4.13.1</juit.version>
   </properties>
 
   <dependencies>
